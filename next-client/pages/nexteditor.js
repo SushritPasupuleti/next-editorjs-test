@@ -1,6 +1,6 @@
 
 import dynamic from "next/dynamic";
-const NoSSRComponent = dynamic(() => import("./editor.js"), {
+const NoSSRComponent = dynamic(() => import("../components/editor/editor"), {
   ssr: false,
 });
 
