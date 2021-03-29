@@ -111,8 +111,14 @@ export default function editorparser() {
 
     console.log(markup)
 
+    function createMarkup() {
+        return {
+           __html: markup    };
+     }; 
+
     return (
         <div>
+            <div dangerouslySetInnerHTML={createMarkup()} /> 
             {markup}
         </div>
     )
