@@ -1,11 +1,11 @@
-import edjsHTML from 'editorjs-html';
+import edjsParser from 'editorjs-parser';
 
-export default function editorhtml() {
-    const edJS = edjsHTML();
+export default function editorparser() {
+    const parser = new edjsParser(
+        // config, customParsers, embedMarkup
+        );
 
-    const edjsParser = edjsHTML();
-    
-    const cleanData = {
+    const markup = parser.parse({
         "time" : 1617021574417,
         "blocks" : [
             {
@@ -107,15 +107,13 @@ export default function editorhtml() {
             }
         ],
         "version" : "2.19.3"
-    }
-    
-    const html = edjsParser.parse(cleanData);
-    
-    console.log(html);
-    
+    });
+
+    console.log(markup)
+
     return (
         <div>
-            {html}
+            {markup}
         </div>
     )
 }
